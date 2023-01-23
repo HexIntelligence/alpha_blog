@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: dpg-cf7bta9gp3jnt5h6dp70-a
+    databaseName: alpha_blog_app
+    user: alpha_blog_app_user
 
 services:
   - type: web
-    name: mysite
+    name: dpg-cf7bta9gp3jnt5h6dp70-a
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: dpg-cf7bta9gp3jnt5h6dp70-a
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
