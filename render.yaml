@@ -1,18 +1,37 @@
+# databases:
+#   - name: dpg-cf7bta9gp3jnt5h6dp70-a
+#     databaseName: alpha_blog_app
+#     user: alpha_blog_app_user
+
+# services:
+#   - type: web
+#     name: dpg-cf7bta9gp3jnt5h6dp70-a
+#     env: ruby
+#     buildCommand: "./bin/render-build.sh"
+#     startCommand: "bundle exec puma -C config/puma.rb"
+#     envVars:
+#       - key: DATABASE_URL
+#         fromDatabase:
+#           name: dpg-cf7bta9gp3jnt5h6dp70-a
+#           property: connectionString
+#       - key: RAILS_MASTER_KEY
+#         sync: false
+
 databases:
-  - name: dpg-cf7bta9gp3jnt5h6dp70-a
-    databaseName: alpha_blog_app
-    user: alpha_blog_app_user
+  - name: mysite
+    databaseName: mysite
+    user: mysite
 
 services:
   - type: web
-    name: dpg-cf7bta9gp3jnt5h6dp70-a
+    name: mysite
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: dpg-cf7bta9gp3jnt5h6dp70-a
+          name: mysite
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
